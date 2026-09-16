@@ -7,8 +7,16 @@
 class Agentchecksum < Formula
   desc "Dependency fingerprint and behavioral regression gate for AI agents"
   homepage "https://github.com/f0rknturkoglu/agentchecksum"
-  version "0.1.0"
   license any_of: ["MIT", "Apache-2.0"]
+
+  # No `version`: both URLs carry `v0.1.0`, and Homebrew reads it from them —
+  # `brew audit` reports it as redundant when it is written out. The generator already
+  # refuses a tag that disagrees with Cargo.toml, so the version cannot drift.
+
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
 
   on_macos do
     if Hardware::CPU.arm?
@@ -27,11 +35,6 @@ class Agentchecksum < Formula
   end
 
   test do
-    assert_match "agentchecksum 0.1.0", shell_output("#{bin}/agentchecksum --version")
-  end
-
-  livecheck do
-    url :stable
-    strategy :github_latest
+    assert_match "agentchecksum #{version}", shell_output("#{bin}/agentchecksum --version")
   end
 end
