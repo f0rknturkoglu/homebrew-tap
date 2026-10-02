@@ -9,7 +9,7 @@ class Agentchecksum < Formula
   homepage "https://github.com/f0rknturkoglu/agentchecksum"
   license any_of: ["MIT", "Apache-2.0"]
 
-  # No `version`: both URLs carry `v0.1.0`, and Homebrew reads it from them —
+  # No `version`: both URLs carry `v0.1.1`, and Homebrew reads it from them —
   # `brew audit` reports it as redundant when it is written out. The generator already
   # refuses a tag that disagrees with Cargo.toml, so the version cannot drift.
 
@@ -20,11 +20,11 @@ class Agentchecksum < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/f0rknturkoglu/agentchecksum/releases/download/v0.1.0/agentchecksum-v0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "a2dbecf6d874d3b670fd10f1f035f4550776f501c8b4d0013a9c21a30c8edf27"
+      url "https://github.com/f0rknturkoglu/agentchecksum/releases/download/v0.1.1/agentchecksum-v0.1.1-aarch64-apple-darwin.tar.gz"
+      sha256 "20a8286745be07cc9d47a38e60fbb0e464b19e0b91b9754fe10d9a2228e471a0"
     else
-      url "https://github.com/f0rknturkoglu/agentchecksum/releases/download/v0.1.0/agentchecksum-v0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "78af59c3f82b77c2c6740e8ef677e0f8e36253d5794ddc3743c2ed5e60cabc64"
+      url "https://github.com/f0rknturkoglu/agentchecksum/releases/download/v0.1.1/agentchecksum-v0.1.1-x86_64-apple-darwin.tar.gz"
+      sha256 "0df9ffec803d751b966ea5d4e12d8100391073db7d191ab1ecf7fc5b981c687b"
     end
   end
 
